@@ -1,0 +1,38 @@
+{% extends 'baback/base.html' %}
+
+{% block content %}
+    <div class="post">
+
+        <h1>{{ post.row1}}</h1>
+
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">Редактировать</a>
+        <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}">Удалить</a>
+
+		
+ 		<p>Id1: {{post.id}}</p>
+        <p>Id2: {{post.id_post}}</p>
+        <p>Время создания: {{ post.time_create|linebreaksbr }}</p>
+        <p>Время устаревания: {{ post.time_death| linebreaksbr }}</p>
+        <p>1 : {{ post.row1|linebreaksbr }}</p>
+        <p>2: {{post.row2}}</p>
+        <p>Удалено: {{ post.deleted}}</p>
+
+        <ul>
+		{% for j in j_list %}
+		<!--<li><a class="btn btn-default" href="{% url 'post_cancel' pk=post.pk %}">Откатить к {{j}}</a></li>-->
+        <li><a class="btn btn-default" href="{% url 'post_iter' pk=post.pk jk=j %}">Откатить к {{j}}</a>
+        {% endfor %}
+        </ul>
+        <ul>
+		{% for r in r_list %}
+		<!--<li><a class="btn btn-default" href="{% url 'post_cancel' pk=post.pk %}">Откатить к {{j}}</a></li>-->
+        <li><a class="btn btn-default" href="{% url 'post_rest' pk=post.pk rk=r %}">Восстановить до {{r|add:1}}</a>
+        {% endfor %}
+        </ul>
+        <!--<a class="btn btn-default" href="{% url 'post_restore' pk=post.pk %}">Восстановить</a>-->
+
+
+
+    
+    </div>
+{% endblock %}

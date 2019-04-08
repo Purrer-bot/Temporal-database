@@ -1,0 +1,13 @@
+{% extends 'baback/base.html' %}
+{% block content %}
+
+        {% for journal in js %}
+        <div>
+            <h1>{{ journal.time }}</h1>
+             <p>Id: {{journal.id_jp}}</p>
+        <p>Время: {{ journal.time|linebreaksbr }}</p>
+        <p>Операция: {{ journal.operation| linebreaksbr }}</p>
+		<p>Флаг:{{ journal.deleted| linebreaksbr }} </p>
+        </div>
+     {% endfor %}
+{% endblock %}

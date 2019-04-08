@@ -1,0 +1,12 @@
+{% extends 'baback/base.html' %}
+{% block content %}
+
+        {% for post in posts %}
+        <div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.row1 }}</a></h1>
+             <p>Id: {{post.id_post}}</p>
+        <p>Время создания: {{ post.time_create|linebreaksbr }}</p>
+        <p>Время устаревания: {{ post.time_death| linebreaksbr }}</p>
+        </div>
+     {% endfor %}
+{% endblock %}

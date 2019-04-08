@@ -1,0 +1,81 @@
+<!doctype html>
+{%load static%}
+<html lang='ru'>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	  <title>Corporate_blue_on_django</title>
+	  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+
+  	<!--[if lt IE 9]>
+  	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  </head>
+  <body>
+    <div id='wrapper'>
+      <header>
+        <a href=''><h1>Temporal database</h1></a>
+        <!-- <form name='search' action='#' method='get'>
+          <input type='text' name='q' placeholder="Search">
+          <button type='submit'>GO</button>
+        </form> -->
+
+        <div class='add_h'><a href="{% url 'post_new' %}">Add New Post</a></div>
+
+
+      </header>
+      <nav>
+        <ul class='top-menu'>
+          <li class="active"><a href='/'>Главная</a></li>
+		  <li class='active'><a href='{%url 'journal_list' %}'>Журнал</a></li>
+		  <li><a href='{%url 'post_fresh' %}'>Свежее</a></li>
+
+
+
+        </ul>
+      </nav>
+      <div id='heading'>
+        <!-- <h1>Главная</h1> -->
+      </div>
+      <aside>
+        <nav>
+          <ul class='aside-menu'>
+            <li class='active'><a href='{%url 'post_list' %}'>Посты</a></li>
+			<li><a href='{%url 'journal_list' %}'>Журнал</a></li>
+			<li><a href='{%url 'post_fresh' %}'>Свежее</a></li>
+
+            <li><a href='/'>Главная</a></li>
+
+          </ul>
+        </nav>
+      </aside>
+      <section>
+         {% block content %}
+         {% endblock %}
+      </section>
+    </div>
+    <footer>
+      <div id='footer'>
+        <div id='twitter'>
+          <h3>Twitter</h3>
+         <p>Это лишнее</p>
+          <p>Footer</p>
+        </div>
+        <div id='sitemap'>
+          <h3>Sitemap</h3>
+          <div>
+            <p>Это тоже лишнее</p>
+          </div>
+        </div>
+        <div id="social">
+      	<h3>SOCIAL NETWORKS</h3>
+          <p>И это тоже лишнее</p>
+        </div>
+        <div id='footer-logo'>
+            <p>Copyright © 2012 Whitesquare. Purrer-bot</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
